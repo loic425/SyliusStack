@@ -3,6 +3,8 @@ twig:
 
 twig_component:
     anonymous_template_directory: 'components/'
+    defaults:
+        App\Twig\Component\: 'components/'
 
 when@test:
     twig:
