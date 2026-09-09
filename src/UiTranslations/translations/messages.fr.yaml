@@ -15,6 +15,8 @@ sylius:
         cancel: 'Annuler'
         copyright: Copyright
         contains: 'Contient'
+        copied_to_clipboard: 'Copié dans le presse-papiers'
+        copy_to_clipboard: 'Copier dans le presse-papiers'
         create: 'Créer'
         dashboard: 'Tableau de bord'
         date_filter: '%label% | %altLabel%'
@@ -58,6 +60,7 @@ sylius:
         success: 'Succès'
         this_form_contains_errors: 'Ce formulaire contient des erreurs.'
         to: 'À'
+        unable_to_copy_to_clipboard: 'Impossible de copier dans le presse-papiers'
         update: 'Mise à jour'
         value: 'Valeur'
         warning: 'Avertissement'

@@ -15,6 +15,8 @@ sylius:
         cancel: Cancel
         copyright: Copyright
         contains: Contains
+        copied_to_clipboard: Copied to clipboard
+        copy_to_clipboard: Copy to clipboard
         create: Create
         dashboard: Dashboard
         date_filter: '%label% | %altLabel%'
@@ -58,6 +60,7 @@ sylius:
         success: Success
         this_form_contains_errors: 'This form contains errors.'
         to: To
+        unable_to_copy_to_clipboard: Unable to copy to clipboard
         update: Update
         value: Value
         warning: Warning
