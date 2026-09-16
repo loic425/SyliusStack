@@ -125,4 +125,9 @@ class Speaker implements ResourceInterface
     {
         return $this->talks;
     }
+
+    public function __toString(): string
+    {
+        return $this->getFullName();
+    }
 }

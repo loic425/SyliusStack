@@ -76,5 +76,9 @@ final class AdminMenuBuilder implements MenuBuilderInterface
         $configuration->addChild('speakers', ['route' => 'app_admin_speaker_index'])
             ->setLabel('app.ui.speakers')
         ;
+
+        $configuration->addChild('applications', ['route' => 'app_admin_application_index'])
+            ->setLabel('app.ui.applications')
+        ;
     }
 }

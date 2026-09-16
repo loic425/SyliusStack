@@ -1,0 +1,5 @@
+imports:
+    - { resource: '../workflows/**/*.php' }
+
+framework:
+    workflows: null

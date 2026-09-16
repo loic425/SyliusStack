@@ -1,5 +1,8 @@
 app:
     ui:
+        accept: Accepter
+        application: Candidature
+        applications: Candidatures
         archival: Archive
         author: Auteur
         author_name: Auteur
@@ -8,6 +11,7 @@ app:
         book: Livre
         books: Livres
         browsing_speakers: Parcourir les Conférencier-e-s
+        cancel: Annuler
         category: Catégorie
         company_name: Société
         conference: Conférence
@@ -17,6 +21,7 @@ app:
         ends_at: Termine à
         export: Export
         first_name: Prénom
+        hold: Mettre sur liste d'attente
         last_name: Nom de famille
         library: Bibliothèque
         managing_your_conferences: Gérer vos conférences
@@ -24,13 +29,17 @@ app:
         name: Nom
         new_conference: Nouvelle conférence
         past_event: Evènement passé
+        reject: Rejeter
         show_talks: Affiche les talks
         speaker: Conférencier
         speakers: Conférencier–e–s
         starts_at: Commence à
+        status: Statut
+        submitted_at: Envoyée à
         talk: Talk
         talks: Talks
         tech_one: Tech#1
         tech_two: Tech#2
         title: Titre
         track: Track
+        updated_at: Mise à jour à

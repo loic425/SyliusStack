@@ -1,5 +1,8 @@
 app:
     ui:
+        accept: Accept
+        application: Application
+        applications: Applications
         archival: Archival
         author: Author
         author_name: Author name
@@ -8,6 +11,7 @@ app:
         book: Book
         books: Books
         browsing_speakers: Browsing speakers
+        cancel: Cancel
         category: Category
         company_name: Company name
         conference: Conference
@@ -17,6 +21,7 @@ app:
         ends_at: Ends at
         export: Export
         first_name: First name
+        hold: Place on waiting list
         last_name: Last name
         library: Library
         managing_your_conferences: Managing your conferences
@@ -26,11 +31,14 @@ app:
         new_speakers: New speakers
         new_talks: New talks
         past_event: Past event
+        reject: Reject
         show_all: Show all
         show_talks: Show talks
         speaker: Speaker
         speakers: Speakers
         starts_at: Starts at
+        status: Status
+        submitted_at: Submitted at
         statistics:
             day: Day
             lifetime: Lifetime
@@ -44,3 +52,4 @@ app:
         tech_two: Tech#2
         title: Title
         track: Track
+        updated_at: Updated at
