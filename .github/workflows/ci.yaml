@@ -20,7 +20,7 @@ jobs:
                 include:
                     - php: '8.4'
                       postgres: "14.6"
-                      symfony: "^8.0"
+                      symfony: "^8.1"
         name: "PHP ${{ matrix.php }} / Symfony ${{ matrix.symfony }}"
         env:
             APP_ENV: test
