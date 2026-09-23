@@ -2,7 +2,7 @@
 
 This document explains why certain conflicts were added to `composer.json` and references related issues.
 
-## twig/twig 3.29.*
+## twig/twig 3.29.0
 
 **Added:** 2026-09-21
 
@@ -10,8 +10,8 @@ This document explains why certain conflicts were added to `composer.json` and r
 `Environment $env` argument (twigphp/Twig#4935). `symfony/twig-bridge`'s
 `TwigRendererEngine` still calls it with no arguments when loading form
 themes, so every form render throws `ArgumentCountError`. `sylius/mailer-bundle`
-had the same call in `EmailTwigAdapter`. 
+had the same call in `EmailTwigAdapter`. The BC break is reverted in the next
+Twig release (twigphp/Twig#4936), so only 3.29.0 is affected.
 
-**Remove when:** releases of `symfony/twig-bridge` and `sylius/mailer-bundle`
-shipping the fix are available (see Sylius/SyliusMailerBundle#292,
-symfony/symfony#66062).
+**Remove when:** Twig 3.29.0 is no longer worth guarding against (the fix ships
+in the next Twig release, see twigphp/Twig#4936).
