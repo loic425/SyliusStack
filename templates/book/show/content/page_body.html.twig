@@ -3,9 +3,26 @@
 <div class="page-body">
     <div class="container-xl">
         <div class="card mb-3">
-            <div class="card-body" {{ sylius_test_html_attribute('author-name') }}>
-                <p><strong>{{ 'app.ui.author'|trans }}:</strong> {{ book.authorName }}</p>
-                <p><strong>{{ 'app.ui.category'|trans }}:</strong>{{ book.category.value }}</p>
+            <div class="card-body">
+                <p>
+                    <strong>{{ 'app.ui.title'|trans }}:</strong>
+                    <twig:sylius_bootstrap_admin_ui:copyable :value="book.title">
+                        <span>{{ book.title }}</span>
+                    </twig:sylius_bootstrap_admin_ui:copyable>
+                </p>
+                <p {{ sylius_test_html_attribute('author-name') }}>
+                    <strong>{{ 'app.ui.author'|trans }}:</strong>
+
+                    <twig:sylius_bootstrap_admin_ui:copyable :value="book.authorName">
+                        <span>{{ book.authorName }}</span>
+                    </twig:sylius_bootstrap_admin_ui:copyable>
+                </p>
+                <p>
+                    <strong>{{ 'app.ui.category'|trans }}:</strong>
+                    <twig:sylius_bootstrap_admin_ui:copyable :value="book.category.value">
+                        <span>{{ book.category.value }}</span>
+                    </twig:sylius_bootstrap_admin_ui:copyable>
+                </p>
             </div>
         </div>
     </div>
