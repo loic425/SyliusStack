@@ -1,16 +1,55 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Call to method arrayNode\\(\\) on an unknown class Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeBuilder\\<Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\ArrayNodeDefinition\\>\\.$#"
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
 			count: 1
-			path: src/TwigExtra/src/Symfony/DependencyInjection/Configuration.php
+			path: src/TwigHooks/src/Bag/DataBag.php
 
 		-
-			message: "#^Call to method arrayNode\\(\\) on an unknown class Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeBuilder\\<Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\ArrayNodeDefinition\\>\\.$#"
+			message: '#^Parameter \#1 \$values of method Symfony\\Component\\Console\\Completion\\CompletionSuggestions\:\:suggestValues\(\) expects list\<string\|Symfony\\Component\\Console\\Completion\\Suggestion\>, array\<string\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/TwigHooks/src/Console/Command/DebugTwigHooksCommand.php
+
+		-
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/TwigHooks/src/Hookable/Metadata/HookableMetadata.php
+
+		-
+			message: '#^Trait Sylius\\TwigHooks\\LiveComponent\\HookableLiveComponentTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/TwigHooks/src/LiveComponent/HookableLiveComponentTrait.php
+
+		-
+			message: '#^Method Sylius\\TwigHooks\\LiveComponent\\Hydration\\DataBagHydrationExtension\:\:hydrate\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/TwigHooks/src/LiveComponent/Hydration/DataBagHydrationExtension.php
+
+		-
+			message: '#^Property Sylius\\TwigHooks\\Profiler\\HooksDataCollector\:\:\$profile on left side of \?\?\= is not nullable nor uninitialized\.$#'
+			identifier: nullCoalesce.initializedProperty
+			count: 1
+			path: src/TwigHooks/src/Profiler/HooksDataCollector.php
+
+		-
+			message: '#^Instanceof between Sylius\\TwigHooks\\Hookable\\AbstractHookable and Sylius\\TwigHooks\\Hookable\\AbstractHookable will always evaluate to true\.$#'
+			identifier: instanceof.alwaysTrue
+			count: 1
+			path: src/TwigHooks/src/Registry/HookablesRegistry.php
+
+		-
+			message: '#^Trait Sylius\\TwigHooks\\Twig\\Component\\HookableComponentTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/TwigHooks/src/Twig/Component/HookableComponentTrait.php
+
+		-
+			message: '#^Call to function method_exists\(\) with Twig\\Parser and ''parseExpression'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
 			count: 2
-			path: src/TwigHooks/src/DependencyInjection/Configuration.php
-
-		-
-			message: "#^Call to method booleanNode\\(\\) on an unknown class Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeBuilder\\<Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\ArrayNodeDefinition\\>\\.$#"
-			count: 1
-			path: src/TwigHooks/src/DependencyInjection/Configuration.php
+			path: src/TwigHooks/src/Twig/TokenParser/HookTokenParser.php
