@@ -113,6 +113,9 @@
             "require": "8.0.*"
         }
     },
+    "conflict": {
+        "twig/twig": "3.29.0"
+    },
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
