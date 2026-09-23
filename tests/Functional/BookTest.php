@@ -49,6 +49,7 @@ final class BookTest extends WebTestCase
         $this->assertSelectorExists('[data-test-icon="tabler:book"]');
 
         // Validate page body
+        $this->assertSelectorTextContains('[data-test-author-name] strong', 'Author');
         $this->assertSelectorTextContains('[data-test-author-name]', 'Stephen King');
     }
 
