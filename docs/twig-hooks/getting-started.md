@@ -94,6 +94,7 @@ sylius_twig_hooks:
                 enabled: true # whether the hookable is enabled
                 context: [] # key-value pair that will be passed to the context bag
                 configuration: [] # key-value pair that will be passed to the configuration bag
+                condition: '@=user != null' # expression evaluated at runtime; the hookable is rendered only when it returns true
                 priority: 0 # priority, the higher the number, the earlier the hookable will be hooked
 ```
 {% endcode %}
@@ -111,8 +112,24 @@ sylius_twig_hooks:
                 context: [] # key-value pair that will be passed to the context bag
                 props: [] # key-value pair that will be passed to our component as props
                 configuration: [] # key-value pair that will be passed to the configuration bag
+                condition: '@=user != null' # expression evaluated at runtime; the hookable is rendered only when it returns true
                 priority: 0 # priority, the higher the number, the earlier the hookable will be hooked
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+**Conditions in hookables**
+
+Unlike the `enabled` flag — which is evaluated statically during the application boot — the `condition` option is an [Expression Language](https://symfony.com/doc/current/expression_language.html) expression that is evaluated at runtime, each time the hook is rendered. The hookable is rendered only when the expression returns `true`. Both the whole hook context and the `_context` variable are available within the expression, so both of these work:
+
+```yaml
+condition: '@=user != null'
+condition: '@=_context.user != null'
+```
+
+Because the expression is evaluated with the whole hook context and the `_context` variable, this behaves like [Twig's `defined`](https://twig.symfony.com/doc/3.x/tests/defined.html)-style checks: `@=_context.product` returns `null` when the variable is absent from the context, so the hookable is simply not rendered. Referencing a missing variable directly (e.g. `@=product ...`) throws a clear `InvalidExpressionException` instead, which makes invalid conditions fail fast during development.
+
+{% hint style="info" %}
+On Symfony 7.1 and newer, conditions are validated at the application boot: an invalid expression is reported as soon as the container is compiled. On older versions, errors are only reported at runtime, when the hook is rendered.
+{% endhint %}

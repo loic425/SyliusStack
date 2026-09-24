@@ -53,3 +53,8 @@ parameters:
 			identifier: function.alreadyNarrowedType
 			count: 2
 			path: src/TwigHooks/src/Twig/TokenParser/HookTokenParser.php
+
+		-
+			message: '#^Method Symfony\\Component\\ExpressionLanguage\\ExpressionLanguage\:\:lint\(\) invoked with 3 parameters, 2 required\.$#'
+			count: 1
+			path: src/TwigHooks/src/DependencyInjection/SyliusTwigHooksExtension.php
