@@ -82,6 +82,9 @@ class Talk implements ResourceInterface
     #[ORM\ManyToMany(targetEntity: Speaker::class, inversedBy: 'talks')]
     private Collection $speakers;
 
+    #[ORM\OneToOne(mappedBy: 'talk', cascade: ['persist', 'remove'])]
+    private ?Application $application = null;
+
     public function __construct()
     {
         $this->speakers = new ArrayCollection();
@@ -180,5 +183,22 @@ class Talk implements ResourceInterface
     public function removeSpeaker(Speaker $speaker): void
     {
         $this->speakers->removeElement($speaker);
+    }
+
+    public function getApplication(): ?Application
+    {
+        return $this->application;
+    }
+
+    public function setApplication(Application $application): static
+    {
+        // set the owning side of the relation if necessary
+        if ($application->getTalk() !== $this) {
+            $application->setTalk($this);
+        }
+
+        $this->application = $application;
+
+        return $this;
     }
 }

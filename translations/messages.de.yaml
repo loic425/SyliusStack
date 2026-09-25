@@ -1,5 +1,7 @@
 app:
     ui:
+        application: Anmeldung
+        applications: Anmeldungen
         archival: Archivierung
         author: Autor
         author_name: Name des Autors

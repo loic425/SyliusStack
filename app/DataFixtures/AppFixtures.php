@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace App\DataFixtures;
 
+use App\Story\DefaultApplicationsStory;
 use App\Story\DefaultBooksStory;
 use App\Story\DefaultConferencesStory;
 use App\Story\DefaultSpeakersStory;
@@ -32,5 +33,6 @@ class AppFixtures extends Fixture
         DefaultSyliusCon2024TalksStory::load();
         DefaultTalksStory::load();
         DefaultUsersStory::load();
+        DefaultApplicationsStory::load();
     }
 }
