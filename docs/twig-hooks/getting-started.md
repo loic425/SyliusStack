@@ -128,7 +128,7 @@ condition: '@=user != null'
 condition: '@=_context.user != null'
 ```
 
-Because the expression is evaluated with the whole hook context and the `_context` variable, this behaves like [Twig's `defined`](https://twig.symfony.com/doc/3.x/tests/defined.html)-style checks: `@=_context.product` returns `null` when the variable is absent from the context, so the hookable is simply not rendered. Referencing a missing variable directly (e.g. `@=product ...`) throws a clear `InvalidExpressionException` instead, which makes invalid conditions fail fast during development.
+The `user` variable is provided from Symfony's current security token, as in Symfony security expressions. To refer to a `user` value passed explicitly in the hook context, use `_context.user`. For context keys, `_context` behaves like [Twig's `defined`](https://twig.symfony.com/doc/3.x/tests/defined.html)-style check: `@=_context.product` returns `null` when the variable is absent from the context. Referencing a missing variable directly (e.g. `@=product ...`) throws a clear `InvalidExpressionException` instead, which makes invalid conditions fail fast during development.
 
 Conditions can also use Symfony's `is_granted()` authorization check. Pass the required role or attribute, and optionally a subject:
 
